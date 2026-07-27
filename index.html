@@ -1416,4 +1416,15 @@ if (window.self === window.top) {
 // Hamburger
 const hamburger = document.getElementById('nav-hamburger');
 const drawer = document.getElementById('nav-drawer');
-const navClose = document.getElementById('nav-cl
+const navClose = document.getElementById('nav-close');
+function openDrawer() { drawer.classList.add('open'); }
+function closeDrawer() { drawer.classList.remove('open'); }
+if (hamburger) hamburger.addEventListener('click', openDrawer);
+if (navClose) navClose.addEventListener('click', closeDrawer);
+</script>
+
+<!-- Temporary closure notice (Sep 2 – Oct 7, 2026) -->
+<script src="/closure-notice.js" defer></script>
+</body>
+</html>
+
