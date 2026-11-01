@@ -22,7 +22,7 @@
   position: fixed; inset: 0; z-index: 900;
   display: flex; align-items: center; justify-content: center;
   padding: 2rem;
-  background: rgba(28,26,22,0.74);
+  background: rgba(28,37,48,0.74);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   opacity: 0;
@@ -35,8 +35,8 @@
   width: 100%; max-width: 34rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
-  background: var(--warm-white, #FDFAF4);
-  border-top: 2px solid var(--terracotta, #C2623F);
+  background: var(--warm-white, #F3F6F8);
+  border-top: 2px solid var(--terracotta, #9C182F);
   box-shadow: 0 30px 90px rgba(0,0,0,0.4);
   padding: 3.25rem 3rem 2.75rem;
   text-align: center;
@@ -51,15 +51,15 @@
   background: none; border: none; cursor: pointer;
   font-family: 'Jost', sans-serif; font-weight: 200;
   font-size: 1.6rem; line-height: 1;
-  color: var(--muted, #6B6158);
+  color: var(--muted, #56616E);
   padding: 0.35rem 0.5rem;
   transition: color 0.3s;
 }
-.closure-close:hover { color: var(--terracotta, #C2623F); }
+.closure-close:hover { color: var(--terracotta, #9C182F); }
 
 .closure-rule {
   width: 2.5rem; height: 1px;
-  background: var(--terracotta, #C2623F);
+  background: var(--terracotta, #9C182F);
   margin: 0 auto 1.5rem;
   opacity: 0.5;
 }
@@ -68,21 +68,21 @@
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300; line-height: 1.1;
   font-size: clamp(1.9rem, 4.5vw, 2.6rem);
-  color: var(--dark, #1C1A16);
+  color: var(--dark, #1C2530);
   margin-bottom: 1.5rem;
 }
 
 .closure-body {
   font-family: 'Jost', sans-serif;
   font-weight: 300; font-size: 0.95rem; line-height: 1.8;
-  color: var(--muted, #6B6158);
+  color: var(--muted, #56616E);
 }
 
 .closure-sign {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic; font-weight: 300;
   font-size: 1.3rem; line-height: 1.5;
-  color: var(--terracotta, #C2623F);
+  color: var(--terracotta, #9C182F);
   margin: 1.75rem 0 2.25rem;
 }
 
@@ -100,17 +100,17 @@
   transition: all 0.3s;
 }
 .closure-btn-primary {
-  color: var(--cream, #F8F3EA);
-  background: var(--terracotta, #C2623F);
-  border: 1px solid var(--terracotta, #C2623F);
+  color: var(--cream, #E9EEF2);
+  background: var(--terracotta, #9C182F);
+  border: 1px solid var(--terracotta, #9C182F);
 }
-.closure-btn-primary:hover { background: var(--terracotta-light, #D97B55); border-color: var(--terracotta-light, #D97B55); }
+.closure-btn-primary:hover { background: var(--terracotta-light, #B8243D); border-color: var(--terracotta-light, #B8243D); }
 .closure-btn-ghost {
-  color: var(--muted, #6B6158);
+  color: var(--muted, #56616E);
   background: transparent;
-  border: 1px solid var(--border, rgba(74,82,64,0.15));
+  border: 1px solid var(--border, rgba(142,20,40,0.15));
 }
-.closure-btn-ghost:hover { border-color: var(--terracotta, #C2623F); color: var(--terracotta, #C2623F); }
+.closure-btn-ghost:hover { border-color: var(--terracotta, #9C182F); color: var(--terracotta, #9C182F); }
 
 .closure-lock { overflow: hidden; }
 
