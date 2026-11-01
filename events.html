@@ -1345,7 +1345,7 @@ body { background: var(--mist); }
   line-height: 1.12;
 }
 .display { font-size: clamp(1.9rem, 3.4vw, 3.3rem) !important; will-change: translate; }
-.hero-title { will-change: translate, opacity; }
+.hero-content { will-change: translate, opacity; }
 .hero-title {
   font-size: clamp(2.6rem, 6.2vw, 6.2rem);
   letter-spacing: 0.16em;
@@ -1566,10 +1566,6 @@ nav .btn-reserve { border-color: var(--terracotta); }
     </div>
   </div>
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
 <!-- RIBBON -->
@@ -1769,7 +1765,7 @@ if (navClose) navClose.addEventListener('click', closeDrawer);
 (function () {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var titles = [].slice.call(document.querySelectorAll('.display'));
-  var hero = document.querySelector('.hero-title');
+  var hero = document.querySelector('.hero-content'); /* title, tagline + buttons move together */
   var ticking = false;
 
   /* How far each title may drift down before nearing the text below it */
@@ -1809,6 +1805,12 @@ if (navClose) navClose.addEventListener('click', closeDrawer);
   }
 
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  /* release the hero's entrance animation once done, so the scroll fade can take over */
+  if (hero) {
+    var release = function () { hero.style.animation = 'none'; onScroll(); };
+    hero.addEventListener('animationend', release, { once: true });
+    setTimeout(release, 2200);
+  }
   function refresh() { measure(); onScroll(); }
 
   window.addEventListener('scroll', onScroll, { passive: true });
