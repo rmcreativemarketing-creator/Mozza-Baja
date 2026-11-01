@@ -1703,8 +1703,8 @@ if (navClose) navClose.addEventListener('click', closeDrawer);
     })();
   }
   var io = new IntersectionObserver(function (es) {
-    if (es[0].isIntersecting) { io.disconnect(); setTimeout(type, 450); }
-  }, { threshold: 0.6 });
+    if (es[0].isIntersecting) { io.disconnect(); setTimeout(type, 600); }
+  }, { threshold: 1, rootMargin: '0px 0px -45% 0px' });   /* start once the whole quote is in the upper ~55% of the screen */
   io.observe(q);
 })();
 </script>
