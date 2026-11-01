@@ -1504,6 +1504,38 @@ nav .btn-reserve { border-color: var(--terracotta); }
   .ev-chiki-photos img:first-child { grid-column: 1 / 3 !important; }
 }
 .item-desc { color: rgba(243,246,248,0.6) !important; }
+
+/* ═══ BUTTONS: Ribbon rail (striped rust/orange rail from the Mozza menus) ═══ */
+:root { --rail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42'%3E%3Cdefs%3E%3Cpattern id='v' width='2' height='7' patternUnits='userSpaceOnUse'%3E%3Crect width='2' height='7' fill='%23C9662B'/%3E%3Crect width='1' height='7' fill='%238C3A12'/%3E%3C/pattern%3E%3Cpattern id='h' width='7' height='2' patternUnits='userSpaceOnUse'%3E%3Crect width='7' height='2' fill='%23C9662B'/%3E%3Crect width='7' height='1' fill='%238C3A12'/%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='42' height='7' fill='url(%23v)'/%3E%3Crect x='0' y='35' width='42' height='7' fill='url(%23v)'/%3E%3Crect x='0' y='0' width='7' height='42' fill='url(%23h)'/%3E%3Crect x='35' y='0' width='7' height='42' fill='url(%23h)'/%3E%3Crect x='.5' y='.5' width='41' height='41' fill='none' stroke='%235A1A2E'/%3E%3Crect x='6.5' y='6.5' width='29' height='29' fill='none' stroke='%235A1A2E'/%3E%3C/svg%3E") 7 round; }
+.btn-primary, .btn-ghost, .btn-reserve, .btn-ghost-nav, .btn-cta-light, .btn-cta-outline, .btn-costa {
+  border: 7px solid transparent !important;
+  border-image: var(--rail) !important;
+  background-clip: padding-box !important;
+  box-shadow: none !important;
+  font-weight: 500;
+  transition: background-color .3s, color .3s;
+}
+.btn-primary, .btn-ghost, .hero .btn-reserve, .btn-cta-light, .btn-cta-outline, .btn-costa { min-width: 18.75rem; }
+nav .btn-reserve, nav .btn-ghost-nav { min-width: 8.6rem; justify-content: center; }
+@media (max-width: 640px) { .btn-primary, .btn-ghost, .hero .btn-reserve, .btn-cta-light, .btn-cta-outline, .btn-costa { min-width: 0; } }
+/* main actions: crimson fill, cream text */
+.btn-primary, .btn-reserve, .btn-cta-outline {
+  background-color: var(--terracotta) !important; color: #F6F1E7 !important;
+}
+.btn-primary:hover, .btn-reserve:hover, .btn-cta-outline:hover { background-color: var(--terracotta-light) !important; color: #F6F1E7 !important; }
+/* second actions: cream fill, crimson text */
+.btn-ghost, .btn-ghost-nav, .btn-cta-light, .btn-costa {
+  background-color: #F6F1E7 !important; color: var(--terracotta) !important;
+}
+.btn-ghost:hover, .btn-ghost-nav:hover, .btn-cta-light:hover, .btn-costa:hover { background-color: #ffffff !important; color: var(--terracotta) !important; }
+/* nav: same rail, slightly slimmer to suit the bar */
+nav .btn-reserve, nav .btn-ghost-nav {
+  border-width: 5px !important; height: 2.9rem; padding: 0 1.6rem !important;
+  border-image: var(--rail) !important; border-image-width: 5px !important;
+}
+@media (max-width: 640px) {
+  nav .btn-reserve { height: 2.6rem; padding: 0 1rem !important; }
+}
 </style>
 </head>
 <body>
