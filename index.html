@@ -1210,6 +1210,19 @@ nav .btn-reserve, nav .btn-ghost-nav {
 .tw-caret { display: inline-block; width: 1.5px; height: 1.05em; background: currentColor; margin-left: -1.5px; margin-right: 0; vertical-align: -0.15em; position: relative; left: 2px; animation: tw-blink .9s steps(1) infinite; }
 .tw-caret.done { animation: tw-blink .9s steps(1) 3 forwards; }
 @keyframes tw-blink { 50% { opacity: 0; } }
+
+/* ═══ Nancy: editorial cleanup ═══ */
+.nancy::before { display: none !important; }              /* flat crimson, no vignette */
+.nancy { background: var(--terracotta) !important; }
+.nancy-content { padding: 7rem 6rem !important; max-width: 40rem; justify-self: center; }
+.nancy-title { margin: 0 0 2.25rem !important; }
+.nancy .prose { font-size: 1.12rem; line-height: 1.75; color: rgba(246,241,231,.9) !important; margin-bottom: 1.25rem; }
+.nancy .prose em { font-style: italic; }
+.nancy-link { display: inline-block; align-self: flex-start; margin-top: 1.5rem; font-family: 'Jost', sans-serif; font-size: .7rem; font-weight: 500;
+  letter-spacing: .25em; text-transform: uppercase; color: #F6F1E7; text-decoration: none;
+  padding-bottom: .45rem; border-bottom: 1px solid rgba(246,241,231,.5); transition: border-color .3s, color .3s; }
+.nancy-link:hover { color: #fff; border-bottom-color: #fff; }
+@media (max-width: 640px) { .nancy-content { padding: 4rem 1.25rem !important; } .nancy .prose { font-size: 1.05rem; } }
 </style>
 </head>
 <body>
@@ -1492,35 +1505,10 @@ nav .btn-reserve, nav .btn-ghost-nav {
   <div class="nancy-inner">
     <div class="nancy-content">
       <h2 class="display nancy-title reveal reveal-delay-1">Nancy<br>Silverton</h2>
-      <p class="prose prose-light reveal reveal-delay-2">Co-owner of Pizzeria Mozza, the Michelin-starred Osteria Mozza and chi SPACCA in Los Angeles, and founder of La Brea Bakery, birthplace of America's artisan bread movement.</p>
-
-      <div class="nancy-award reveal reveal-delay-3">
-        <div class="award-icon">✦</div>
-        <div class="award-text">
-          <div class="award-label">James Beard Foundation · 2026</div>
-          <div class="award-title">Lifetime Achievement Award, the Foundation's highest honor</div>
-        </div>
-      </div>
-
-      <p class="prose prose-light reveal reveal-delay-3">Named one of the Most Innovative Women in Food and Drink by <em>Fortune</em> and <em>Food &amp; Wine</em>, and author of nine cookbooks, including the <em>Mozza Cookbook</em> and <em>Breads from La Brea Bakery</em>.</p>
-
-      <div class="nancy-credentials reveal reveal-delay-4">
-        <div class="credential">
-          <div class="credential-val">9</div>
-          <div class="credential-key">Cookbooks</div>
-        </div>
-        <div class="credential">
-          <div class="credential-val">Michelin Star</div>
-          <div class="credential-key">Osteria Mozza</div>
-        </div>
-      </div>
-
-      <div class="btn-row reveal reveal-delay-4">
-        <a href="https://www.instagram.com/nancysilverton" target="_blank" rel="noopener" class="btn-ghost">Follow @nancysilverton</a>
-        <a href="https://www.instagram.com/mozzabaja/" target="_blank" rel="noopener" class="btn-ghost">Follow @mozzabaja</a>
-      </div>
+      <p class="prose prose-light reveal reveal-delay-2">Nancy co-owns Pizzeria Mozza, the Michelin-starred Osteria Mozza and chi SPACCA in Los Angeles, and founded La Brea Bakery, the birthplace of America's artisan bread movement.</p>
+      <p class="prose prose-light reveal reveal-delay-3">In 2026 the James Beard Foundation gave her its highest honor, the Lifetime Achievement Award. She is the author of nine cookbooks, including <em>The Mozza Cookbook</em>, and has been named one of the Most Innovative Women in Food and Drink by <em>Fortune</em> and <em>Food &amp; Wine</em>.</p>
+      <a class="nancy-link reveal reveal-delay-4" href="https://www.instagram.com/nancysilverton" target="_blank" rel="noopener">Follow Nancy on Instagram</a>
     </div>
-
     <div class="nancy-image">
       <img src="images/nancy-silverton.jpg" alt="Nancy Silverton holding her cookbook" loading="lazy">
     </div>
