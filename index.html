@@ -1200,6 +1200,15 @@ nav .btn-reserve, nav .btn-ghost-nav {
 @media (max-width: 640px) {
   nav .btn-reserve { height: 2.6rem; padding: 0 1rem !important; }
 }
+
+/* ═══ Quote typewriter ═══ */
+.tw-wrap { position: relative; display: block; }
+.tw-full { visibility: hidden; }                     /* reserves the space so nothing shifts */
+.tw-typed { position: absolute; inset: 0; }
+.tw-rest { visibility: hidden; }
+.tw-caret { display: inline-block; width: 1.5px; height: 1.05em; background: currentColor; margin-left: -1.5px; margin-right: 0; vertical-align: -0.15em; position: relative; left: 2px; animation: tw-blink .9s steps(1) infinite; }
+.tw-caret.done { animation: tw-blink .9s steps(1) 3 forwards; }
+@keyframes tw-blink { 50% { opacity: 0; } }
 </style>
 </head>
 <body>
@@ -1282,9 +1291,7 @@ nav .btn-reserve, nav .btn-ghost-nav {
   <div class="welcome-content">
     <h2 class="display welcome-title reveal reveal-delay-1">Italian soul,<br>Baja heart</h2>
     <p class="prose reveal reveal-delay-2">Mozza brings the relaxed spirit of Los Angeles to the East Cape, blending Osteria Mozza, Pizzeria Mozza and chi SPACCA with the best of the region's seafood and produce.</p>
-    <blockquote class="welcome-quote reveal reveal-delay-3">
-      "Focused but not fussy, straightforward and always uncompromising."
-    </blockquote>
+    <blockquote class="welcome-quote reveal reveal-delay-3" data-typewriter>&ldquo;Focused but not fussy, straightforward and always uncompromising.&rdquo;</blockquote>
     <p class="prose reveal reveal-delay-4">Set on the Marina Village courtyard at Costa Palmas, with marina views and an atmosphere both convivial and refined.</p>
   </div>
 </section>
@@ -1670,6 +1677,35 @@ if (navClose) navClose.addEventListener('click', closeDrawer);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
   measure();
   update();
+})();
+</script>
+
+<!-- Quote typewriter -->
+<script>
+(function () {
+  var q = document.querySelector('[data-typewriter]');
+  if (!q || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var text = q.textContent.trim();
+  q.setAttribute('aria-label', text);
+  q.innerHTML = '<span class="tw-wrap" aria-hidden="true"><span class="tw-full"></span><span class="tw-typed"><span class="tw-t"></span><span class="tw-caret"></span><span class="tw-rest"></span></span></span>';
+  q.querySelector('.tw-full').textContent = text;
+  var out = q.querySelector('.tw-t'), caret = q.querySelector('.tw-caret'), rest = q.querySelector('.tw-rest');
+  rest.textContent = text;
+  function type() {
+    var i = 0;
+    (function step() {
+      out.textContent = text.slice(0, ++i);
+      rest.textContent = text.slice(i);   /* invisible remainder keeps line breaks fixed */
+      var ch = text.charAt(i - 1);
+      var d = 38 + (ch === ',' ? 260 : ch === ' ' ? 20 : 0);
+      if (i < text.length) setTimeout(step, d); else caret.classList.add('done');
+    })();
+  }
+  var io = new IntersectionObserver(function (es) {
+    if (es[0].isIntersecting) { io.disconnect(); setTimeout(type, 450); }
+  }, { threshold: 0.6 });
+  io.observe(q);
 })();
 </script>
 </body>
